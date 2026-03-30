@@ -5,46 +5,27 @@ module.exports = {
 	config: {
 		name: "callad",
 		version: "1.7",
-		author: "NTKhang",
+		author: "NTKhang 🌙⚽👑",
 		countDown: 5,
 		role: 0,
-		description: {
-			vi: "gửi báo cáo, góp ý, báo lỗi,... của bạn về admin bot",
-			en: "send report, feedback, bug,... to admin bot"
-		},
+		description: "Envoyer un rapport, feedback ou bug aux admins du bot 🌙⚽👑",
 		category: "contacts admin",
-		guide: {
-			vi: "   {pn} <tin nhắn>",
-			en: "   {pn} <message>"
-		}
+		guide: "   {pn} <message> ⚽👽"
 	},
 
 	langs: {
-		vi: {
-			missingMessage: "Vui lòng nhập tin nhắn bạn muốn gửi về admin",
-			sendByGroup: "\n- Được gửi từ nhóm: %1\n- Thread ID: %2",
-			sendByUser: "\n- Được gửi từ người dùng",
-			content: "\n\nNội dung:\n─────────────────\n%1\n─────────────────\nPhản hồi tin nhắn này để gửi tin nhắn về người dùng",
-			success: "Đã gửi tin nhắn của bạn về %1 admin thành công!\n%2",
-			failed: "Đã có lỗi xảy ra khi gửi tin nhắn của bạn về %1 admin\n%2\nKiểm tra console để biết thêm chi tiết",
-			reply: "📍 Phản hồi từ admin %1:\n─────────────────\n%2\n─────────────────\nPhản hồi tin nhắn này để tiếp tục gửi tin nhắn về admin",
-			replySuccess: "Đã gửi phản hồi của bạn về admin thành công!",
-			feedback: "📝 Phản hồi từ người dùng %1:\n- User ID: %2%3\n\nNội dung:\n─────────────────\n%4\n─────────────────\nPhản hồi tin nhắn này để gửi tin nhắn về người dùng",
-			replyUserSuccess: "Đã gửi phản hồi của bạn về người dùng thành công!",
-			noAdmin: "Hiện tại bot chưa có admin nào"
-		},
-		en: {
-			missingMessage: "Please enter the message you want to send to admin",
-			sendByGroup: "\n- Sent from group: %1\n- Thread ID: %2",
-			sendByUser: "\n- Sent from user",
-			content: "\n\nContent:\n─────────────────\n%1\n─────────────────\nReply this message to send message to user",
-			success: "Sent your message to %1 admin successfully!\n%2",
-			failed: "An error occurred while sending your message to %1 admin\n%2\nCheck console for more details",
-			reply: "📍 Reply from admin %1:\n─────────────────\n%2\n─────────────────\nReply this message to continue send message to admin",
-			replySuccess: "Sent your reply to admin successfully!",
-			feedback: "📝 Feedback from user %1:\n- User ID: %2%3\n\nContent:\n─────────────────\n%4\n─────────────────\nReply this message to send message to user",
-			replyUserSuccess: "Sent your reply to user successfully!",
-			noAdmin: "Bot has no admin at the moment"
+		fr: {
+			missingMessage: "⚠️ Veuillez entrer le message que vous voulez envoyer aux admins 👽",
+			sendByGroup: "\n- Envoyé depuis le groupe : %1 ⚽\n- ID du thread : %2 👑",
+			sendByUser: "\n- Envoyé depuis un utilisateur 🌙",
+			content: "\n\n📩 Contenu :\n─────────────────\n%1\n─────────────────\nRépondez à ce message pour envoyer un retour à l'utilisateur 🌟",
+			success: "✅ Votre message a été envoyé avec succès aux %1 admins ! ⚽🌙\n%2",
+			failed: "❌ Une erreur est survenue lors de l'envoi à %1 admins 👽\n%2\nVérifiez la console pour plus de détails",
+			reply: "📍 Réponse de l'admin %1 ⚽:\n─────────────────\n%2\n─────────────────\nRépondez à ce message pour continuer à envoyer un message à l'admin 🌙",
+			replySuccess: "✅ Votre réponse a été envoyée avec succès à l'admin 🌟",
+			feedback: "📝 Feedback de l'utilisateur %1 🌙:\n- ID utilisateur : %2%3\n\nContenu :\n─────────────────\n%4\n─────────────────\nRépondez à ce message pour renvoyer un message à l'utilisateur 👽",
+			replyUserSuccess: "✅ Votre réponse a été envoyée avec succès à l'utilisateur ⚽🌙!",
+			noAdmin: "⚠️ Aucun admin n'est disponible pour le moment 👑"
 		}
 	},
 
@@ -56,9 +37,9 @@ module.exports = {
 		if (config.adminBot.length == 0)
 			return message.reply(getLang("noAdmin"));
 		const senderName = await usersData.getName(senderID);
-		const msg = "==📨️ CALL ADMIN 📨️=="
-			+ `\n- User Name: ${senderName}`
-			+ `\n- User ID: ${senderID}`
+		const msg = "==📨️ APPEL AUX ADMINS 📨️=="
+			+ `\n- Nom utilisateur : ${senderName}`
+			+ `\n- ID utilisateur : ${senderID}`
 			+ (isGroup ? getLang("sendByGroup", (await threadsData.get(threadID)).threadName, threadID) : getLang("sendByUser"));
 
 		const formMessage = {
@@ -183,9 +164,8 @@ module.exports = {
 				}, messageIDSender);
 				break;
 			}
-			default: {
+			default:
 				break;
-			}
 		}
 	}
 };
