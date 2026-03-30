@@ -21,7 +21,7 @@ module.exports = {
 🌌 flash
 🌌 neo
 
-👾 Merci pour votre patience et que le football extraterrestre soit avec vous ! ⚽🛸`
+👾 Merci pour votre patience et que le football 🏈 soit avec vous ! ⚽🛸`
     );
   }
 };
