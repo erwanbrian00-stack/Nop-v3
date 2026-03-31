@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "ai",
     version: "1.0",
-    author: "Celestin 👽⚽",
+    author: "Celestin 🖤🥀",
     countDown: 2,
     role: 0,
     shortDescription: "AI indisponible",
@@ -14,7 +14,7 @@ module.exports = {
   onStart: async function ({ message, event, args }) {
     return message.reply(
 `🛸════════════════🛸
-👽 ⚽ IA momentanément indisponible ⚽ 👽
+🥀🖤 IA momentanément indisponible 🖤🥀
 🛸════════════════🛸
 
 ⚡ Pour continuer :
